@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ctse-service
+  name: offer-service
   labels:
     app: ctse-service
 spec:
@@ -10,7 +10,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 5000
+    targetPort: 3000
   selector:
     app: ctse-app
   sessionAffinity: None
