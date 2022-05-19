@@ -5,12 +5,12 @@ metadata:
   labels:
     app: ctse-service
 spec:
-  type: LoadBalancer
+  type: LoadBalancer #give network access through a cloud provider's load balance functionality
   ports:
   - name: http
-    port: 80
+    port: 80 #port exposed internally in the cluster
     protocol: TCP
-    targetPort: 3000
+    targetPort: 3000 # the container port to send requests to
   selector:
-    app: ctse-app
+    app: ctse-app # select pods with the label 'app' set to 'ctse-app'
   sessionAffinity: None
